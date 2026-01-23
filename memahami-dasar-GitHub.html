@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panduan Git & GitHub</title>
+    <link rel="stylesheet" href="m-style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Panduan Git & GitHub </h1>
+        
+        <p class="intro-text">
+            Memahami konsep dasar dan perintah-perintah.
+        </p>
+        
+        <h2>1. Git vs. GitHub</h2>
+        <div class="comparison-box">
+            <div class="comparison-item">
+                <h3>Git</h3>
+                <p>Alat (software) Version Control System yang dipasang di komputer. Fungsinya untuk mencatat setiap perubahan pada file.</p>
+            </div>
+            <div class="comparison-item">
+                <h3>GitHub</h3>
+                <p>Layanan di internet yang menyimpan proyek Git (folder dan file). GitHub memudahkan dalam bekerja bersama tim secara online.</p>
+            </div>
+        </div>
+        
+        <h2>2. Istilah Penting yang Wajib Diketahui</h2>
+        <ul class="styled-list">
+            <li>
+                <strong>Repository (Repo):</strong> Wadah atau folder proyek tempat menyimpan semua file kode dan riwayat perubahannya.
+            </li>
+            <li>
+                <strong>Commit:</strong> Seperti fitur "Save", tetapi dengan catatan. Setiap commit merekam perubahan apa saja yang kita buat.
+            </li>
+            <li>
+                <strong>Push:</strong> Proses mengirimkan perubahan dari komputer lokal ke server GitHub.
+            </li>
+            <li>
+                <strong>Pull:</strong> Mengambil pembaruan terbaru dari server GitHub ke komputer.
+            </li>
+            <li>
+                <strong>Branch:</strong> Cabang dari kode utama. Berguna jika ingin mencoba fitur baru tanpa merusak kode yang sudah stabil.
+            </li>
+        </ul>
+        
+        <h2>3. Memahami Mengapa Kita Menjalankan Perintah Git</h2>
+        <ul class="command-list">
+            <li>
+                <h3>git init</h3>
+                <p><strong>Fungsinya:</strong> Mengubah folder biasa di komputer menjadi sebuah Git Repository.</p>
+                <p><strong>Mengapa:</strong> Tanpa ini, folder hanyalah folder biasa. Setelah menjalankan ini, Git akan membuat folder tersembunyi bernama <code>.git</code> yang berfungsi sebagai "mesin waktu" untuk merekam setiap perubahan yang dilakukan.</p>
+            </li>
+            <li>
+                <h3>git add .</h3>
+                <p><strong>Fungsinya:</strong> Memasukkan file ke dalam Staging Area (area persiapan).</p>
+                <p><strong>Mengapa:</strong> Git tidak otomatis merekam setiap perubahan. Kita harus memilih file mana yang siap untuk disimpan. Tanda titik <code>.</code> artinya "pilih semua file". Ini seperti kita sedang mengepak barang ke dalam kardus sebelum dikirim; kita memilih barang apa saja yang masuk ke dalam kardus tersebut.</p>
+            </li>
+            <li>
+                <h3>git commit -m "pesan"</h3>
+                <p><strong>Fungsinya:</strong> Mengunci perubahan secara permanen di database lokal.</p>
+                <p><strong>Mengapa:</strong> Jika <code>git add</code> adalah memasukkan barang ke kardus, maka commit adalah menyegel kardus tersebut dan memberinya label. Label <code>-m</code> (message) sangat penting agar di masa depan tahu apa yang diubah pada saat itu tanpa harus membuka kodenya satu per satu.</p>
+            </li>
+            <li>
+                <h3>git branch -M main</h3>
+                <p><strong>Fungsinya:</strong> Menamai ulang cabang utama menjadi <code>main</code>.</p>
+                <p><strong>Mengapa:</strong> Secara default, Git lama sering menggunakan nama <code>master</code>. Namun, standar industri modern (termasuk GitHub) sekarang menggunakan nama <code>main</code>. Perintah ini memastikan nama cabang di komputer kita sama dengan nama cabang di GitHub agar tidak terjadi error saat sinkronisasi.</p>
+            </li>
+            <li>
+                <h3>git remote add origin [URL]</h3>
+                <p><strong>Fungsinya:</strong> Memperkenalkan Git di komputer dengan server GitHub di internet.</p>
+                <p><strong>Mengapa:</strong> Komputer perlu tahu ke mana kode (file) ini harus dikirim. <code>origin</code> adalah nama panggilan (alias) untuk alamat URL repository GitHub kita. Jadi daripada mengetik URL yang panjang setiap saat, kita cukup menyebutnya <code>origin</code>.</p>
+            </li>
+            <li>
+                <h3>git push -u origin main</h3>
+                <p><strong>Fungsinya:</strong> Mengunggah kode dari komputer lokal ke server GitHub.</p>
+                <p><strong>Mengapa:</strong> Ini adalah langkah terakhir untuk mempublikasikan karya kita.</p>
+                <ul>
+                    <li><strong>push:</strong> Dorong/unggah</li>
+                    <li><strong>origin:</strong> Ke alamat GitHub yang tadi kita daftarkan</li>
+                    <li><strong>main:</strong> Ke cabang utama</li>
+                    <li><strong>-u:</strong> (Upstream) Mengingat pilihan ini, sehingga ke depannya cukup mengetik <code>git push</code> saja</li>
+                </ul>
+            </li>
+        </ul>
+        
+        <div class="summary-box">
+            <h3>Sederhananya, Alur Kerja Git & GitHub:</h3>
+            <ol>
+                <li><strong>Siapkan foldernya</strong> <code>(init)</code></li>
+                <li><strong>Pilih file yang mau disimpan</strong> <code>(add)</code></li>
+                <li><strong>Bungkus dan beri catatan</strong> <code>(commit)</code></li>
+                <li><strong>Tentukan alamat tujuan</strong> <code>(remote)</code></li>
+                <li><strong>Kirim paketnya ke tujuan</strong> <code>(push)</code></li>
+            </ol>
+        </div>
+        
+    </div>
+</body>
+</html>
