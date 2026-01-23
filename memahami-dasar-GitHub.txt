@@ -1,0 +1,47 @@
+1. Git vs. GitHub
+- Git: Alat (software) Version Control System yang dipasang di komputer. Fungsinya untuk mencatat setiap perubahan pada file.
+- GitHub: Layanan di internet yang menyimpan proyek Git (folder dan file). GitHub memudahkan dalam bekerja bersama tim secara online.
+
+2. Istilah Penting yang Wajib Diketahui
+- Repository (Repo): Wadah atau folder proyek tempat menyimpan semua file kode dan riwayat perubahannya.
+- Commit: Seperti fitur "Save", tetapi dengan catatan. Setiap commit merekam perubahan apa saja yang kita buat.
+- Push: Proses mengirimkan perubahan dari komputer lokal ke server GitHub.
+- Pull: Mengambil pembaruan terbaru dari server GitHub ke komputer.
+- Branch: Cabang dari kode utama. Berguna jika ingin mencoba fitur baru tanpa merusak kode yang sudah stabil.
+
+3. Memahami mengapa kita menjalankan perintah tersebut
+a. git init
+- Fungsinya: Mengubah folder biasa di komputer menjadi sebuah Git Repository.
+- Mengapa: Tanpa ini, folder hanyalah folder biasa. Setelah menjalankan ini, Git akan membuat folder tersembunyi bernama .git yang berfungsi sebagai "mesin waktu" untuk merekam setiap perubahan yang lakukan.
+
+b. git add .
+- Fungsinya: Memasukkan file ke dalam Staging Area (area persiapan).
+- Mengapa: Git tidak otomatis merekam setiap perubahan. Kita harus memilih file mana yang siap untuk disimpan. Tanda titik . artinya "pilih semua file". Ini seperti kita sedang mengepak barang ke dalam kardus sebelum dikirim; kita memilih barang apa saja yang masuk ke dalam kardus tersebut.
+
+c. git commit -m "pesan"
+- Fungsinya: Mengunci perubahan secara permanen di database lokal.
+- Mengapa: Jika git add adalah memasukkan barang ke kardus, maka commit adalah menyegel kardus tersebut dan memberinya label. Label -m (message) sangat penting agar di masa depan tahu apa yang ubah pada saat itu tanpa harus membuka kodenya satu per satu.
+
+d. git branch -M main
+- Fungsinya: Menamai ulang cabang utama menjadi main.
+- Mengapa: Secara default, Git lama sering menggunakan nama master. Namun, standar industri modern (termasuk GitHub) sekarang menggunakan nama main. Perintah ini memastikan nama cabang di komputer kita sama dengan nama cabang di GitHub agar tidak terjadi error saat sinkronisasi.
+
+e. git remote add origin [URL]
+- Fungsinya: Memperkenalkan Git di komputer dengan server GitHub di internet.
+- Mengapa: Komputer perlu tahu ke mana kode(file) ini harus dikirim. origin adalah nama panggilan (alias) untuk alamat URL repository GitHub kita. Jadi daripada mengetik URL yang panjang setiap saat, kita cukup menyebutnya origin.
+
+f. git push -u origin main
+- Fungsinya: Mengunggah kode dari komputer lokal ke server GitHub.
+- Mengapa: Ini adalah langkah terakhir untuk mempublikasikan karya kita.
+    * push: Dorong/unggah.
+    * origin: Ke alamat GitHub yang tadi kita daftarkan.
+    * main: Ke cabang utama.
+    * -u: (Upstream) Mengingat pilihan ini, sehingga ke seterusnya cukup mengetik git push saja.
+
+
+Sederhananya, sebagai berikut:
+- Siapkan foldernya (init).
+- Pilih file yang mau disimpan (add).
+- Bungkus dan beri catatan (commit).
+- Tentukan Alamat tujuan (remote).
+- Kirim paketnya ke tujuan (push).
